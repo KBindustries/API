@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const weeklyTimetableSchema = new mongoose.Schema(
   {
@@ -8,24 +8,24 @@ const weeklyTimetableSchema = new mongoose.Schema(
     },
     specialty: {
       type: mongoose.Schema.Types.ObjectId,
-          ref: 'Specialty',
-          required: true,
+      ref: "Specialty",
+      required: true,
     },
     timetable: [
       {
         course: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Course',
+          ref: "Course",
           required: true,
         },
         teacher: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Teacher',
+          ref: "Teacher",
           required: true,
         },
         date: {
           type: String,
-          required: true,
+          // required: true,
         },
         day: {
           type: String,
@@ -38,9 +38,9 @@ const weeklyTimetableSchema = new mongoose.Schema(
           type: String,
           required: true,
         },
-        status:{
-          type:String,
-          default:"Planned"
+        status: {
+          type: String,
+          default: "Planned",
         },
       },
     ],
@@ -48,4 +48,4 @@ const weeklyTimetableSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model('WeeklyTimetable', weeklyTimetableSchema);
+export default mongoose.model("WeeklyTimetable", weeklyTimetableSchema);
